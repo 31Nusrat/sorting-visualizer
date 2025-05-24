@@ -2,8 +2,6 @@
 
 An interactive and educational web application to visualize how popular sorting algorithms work, built with **React**.
 
-![Sorting Visualizer Screenshot](https://your-screenshot-url.com) <!-- Replace with your actual screenshot -->
-
 ---
 
 ## 🌟 Features
