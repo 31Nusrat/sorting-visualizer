@@ -1,0 +1,332 @@
+.visualizer-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 0px;
+}
+
+.bar-container{
+  display: flex;
+  align-items: flex-end;
+  height: 500px;
+  margin-bottom: 20px;
+}
+
+.array-bar{
+  width:15px;
+  margin: 0 1px;
+  background-color: teal;
+  transition: height 0.3s ease, background-color 0.3s ease;
+}
+
+.generate-button{
+  background: linear-gradient(145deg,#a1ffce,#faffd1);
+  border: none;
+  border-radius: 50px;
+  color:#333;
+  padding: 12px 30px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 8px 15px rgba(100,255,200,0.3);
+  transition: all 0.3s ease;
+  user-select: none;
+  outline: none;
+  margin:20px;
+}
+
+.generate-button:hover{
+  background: linear-gradient(145deg,#faffd1,#a1ffce);
+  box-shadow:0 12px 20px rgba(100,255,200,0.5);
+  transform: translateY(-3px);
+}
+
+.generate-button:active{
+  transform: translateY(1px);
+  box-shadow: 0 4px 8px rgba(100,255,200,0.2);
+}
+
+.slider-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+  font-weight: bold;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 16px;
+  color:#444;
+}
+
+.slider-container label{
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.slider-container input[type="range"] {
+  -webkit-appearance: none;
+  width: 300px;
+  height: 8px;
+  background:linear-gradient(to right,#38b2ac,#81e6d9);
+  border-radius: 5px;
+  outline: none;
+  transition: background 0.3s;
+}
+
+.slider-container input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 20px;
+  width: 20px;
+  background: #38b2ac;
+  border-radius: 50%;
+  border: 2px solid white;
+  cursor: pointer;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease;
+}
+
+.slider-container input[type=range]::-webkit-slider-thumb:hover {
+  background: #2c7a7b;
+}
+
+.slider-container input[type=range]::-moz-range-thumb {
+  height: 20px;
+  width: 20px;
+  background: #38b2ac;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
+
+.slider-container input[type=range]:hover {
+  background: linear-gradient(to right, #2c7a7b, #68d391);
+}
+
+.control-btn{
+  display: flex;
+  gap: 10px; /* space between buttons */
+  margin-top: 15px;
+}
+
+.control-btn button{
+  padding: 10px 20px;
+  background-color: #007bff;
+  color:white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.control-btn button:hover{
+  background-color: #0056b3;
+}
+
+.control-btn button:active{
+  background-color: #003d7a;
+}
+
+.dropdown-sort {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  gap: 12px;
+  align-items: center;
+}
+
+.dropdown-sort select {
+  padding: 8px 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  border:1px solid #ccc;
+  background-color: #f7f7f7;
+  transition: box-shadow 0.3s ease;
+}
+
+.dropdown-sort select:focus{
+  outline: none;
+  box-shadow: 0 0 5px rgba(138,43,226,0.6);
+}
+
+.dropdown-sort button {
+  padding: 8px 20px;
+  font-size: 16px;
+  border:none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: white;
+  background: linear-gradient(135deg,#c084fc,#a855f7);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dropdown-sort button:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(168,85,247,0.4);
+}
+
+.dropdown-sort button:disabled{
+  background:#ccc;
+  cursor: not-allowed;
+}
+
+.array-bar.paused {
+  transition: none !important;
+}
+
+/* Default Day mode variables */
+:root {
+  /* --bg-color: #f0f0f0; */
+  --text-primary: #222;
+  --text-secondary: #555;
+  --bar-color: teal;
+  --compare-color: red;
+  --swap-color: rgb(237, 222, 18);
+  --sorted-color: #c084fc;
+}
+
+/* Night mode overrides */
+.night-mode, .night {
+  --bg-color: #121212;
+  --text-primary: #eee;
+  --text-secondary: #bbb;
+  --bar-color: #60ffda;
+  --compare-color: #ff5252;
+  --label-color: #fff;  /* white labels in night mode */
+  --swap-color: #ff4d56;
+  --sorted-color: #c084fc;
+}
+
+/* Apply background and text colors */
+.visualizer-container {
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  min-height: 100vh;
+  padding: 20px;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* Style the toggle switch */
+.toggle-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+/* The switch - inspired by common CSS toggle switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  background-color: #ccc;
+  border-radius: 24px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/* Rounded slider */
+.slider.round {
+  border-radius: 24px;
+}
+.slider.round:before {
+  border-radius: 50%;
+}
+.slider-container label {
+  color: var(--label-color);
+}
+
+/* ====== Responsive Mobile Styles ====== */
+@media (max-width: 600px) {
+  .visualizer-container {
+    padding: 10px;
+  }
+
+  .bar-container {
+    height: 300px; /* smaller height */
+    overflow-x: auto; /* horizontal scroll if needed */
+    padding-bottom: 10px;
+  }
+
+  .array-bar {
+    width: 8px; /* thinner bars */
+    margin: 0 0.5px;
+  }
+
+  .generate-button {
+    padding: 10px 20px;
+    font-size: 14px;
+    margin: 15px 0;
+    width: 100%; /* full width on mobile */
+    box-shadow: 0 6px 12px rgba(100,255,200,0.3);
+  }
+
+  .slider-container {
+    width: 100%;
+  }
+
+  .slider-container input[type="range"] {
+    width: 100%; /* full width slider */
+  }
+
+  .control-btn {
+    flex-direction: column; /* stack buttons */
+    gap: 12px;
+  }
+
+  .control-btn button {
+    width: 100%;
+    font-size: 16px;
+    padding: 14px 0;
+  }
+
+  .dropdown-sort {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .dropdown-sort select,
+  .dropdown-sort button {
+    width: 100%;
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  .slider-container label {
+    font-size: 14px;
+  }
+}

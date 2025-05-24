@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import SortingVisualizer from "./components/SortingVisualizer";
+import SortingInfo from "./components/SortingInfo";
+import "./App.css"; // We'll put navbar styles here
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <nav className="navbar">
+        <h1 className="logo">Sorting Visualizer</h1>
+        <div className="nav-links">
+          <Link to="/" className="nav-link">Visualizer</Link>
+          <Link to="/info" className="nav-link">About Algorithms</Link>
+        </div>
+      </nav>
+
+      <Routes>
+        <Route path="/" element={<SortingVisualizer />} />
+        <Route path="/info" element={<SortingInfo />} />
+      </Routes>
+    </Router>
   );
 }
 
