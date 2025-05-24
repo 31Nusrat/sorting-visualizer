@@ -1,70 +1,84 @@
-# Getting Started with Create React App
+# 🔢 Sorting Visualizer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+An interactive and educational web application to visualize how popular sorting algorithms work, built with **React**.
 
-## Available Scripts
+![Sorting Visualizer Screenshot](https://your-screenshot-url.com) <!-- Replace with your actual screenshot -->
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 🌟 Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### ✅ Supported Algorithms
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Visualize the step-by-step process of six popular sorting algorithms:
+- 🔵 **Bubble Sort**
+- 🟢 **Selection Sort**
+- 🟡 **Insertion Sort**
+- 🟣 **Merge Sort**
+- 🔴 **Quick Sort**
+- 🟠 **Heap Sort**
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 🎛️ Adjustable Controls
 
-### `npm run build`
+- **Array Size Slider**  
+  Change the number of bars in the array (10 to 150).
+  
+- **Speed Slider**  
+  Control the speed of animation (5ms to 300ms).
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### ⏸️ Sorting Controls
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Start**: Begin the sorting animation.  
+- **Pause**: Pause the current sort.  
+- **Resume**: Continue from where you left off.  
+- **Reset**: Regenerate a new unsorted array and clear animations.
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 🌗 Night/Day Mode
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Toggle between **Day Mode** and **Night Mode** for a comfortable viewing experience.  
+Preference is saved automatically using `localStorage`.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 🎨 Color-Coded Bars
 
-## Learn More
+- 🟠 **Comparisons** – Bars being compared are highlighted.
+- 🔁 **Swaps** – Bars being swapped flash with a unique color.
+- ✅ **Sorted** – Sorted bars are shown in a distinct final color.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### 📘 Learn the Algorithms
 
-### Code Splitting
+Visit the **"About Algorithms"** page to explore:
+- 🫧 Bubbles floating up (Bubble Sort)
+- 🃏 Card-style logic (Insertion Sort)
+- 🌲 Tree merging (Merge Sort)
+- And more fun metaphors!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
+### 📱 Responsive Design
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Designed to look great on all devices.  
+Automatically limits array size on small screens for better performance and usability.
 
-### Making a Progressive Web App
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 🚀 Getting Started
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+###
+```bash
+1. Clone the repo
+  git clone https://github.com/your-username/sorting-visualizer.git
+  cd sorting-visualizer
+2. Install dependencies
+  npm install
+3. Run locally
+  npm start
